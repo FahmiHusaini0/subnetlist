@@ -2,6 +2,9 @@
   "name": "subnetlist",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "remoteUser": "node",
+  "containerUser": "node",
+  "updateRemoteUserUID": true,
+  "runArgs": ["--init"],
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
@@ -10,5 +13,13 @@
       "visibility": "private"
     }
   },
-  "postCreateCommand": "npm ci"
+  "postCreateCommand": "npm ci",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
