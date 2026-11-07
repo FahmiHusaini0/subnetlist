@@ -4,7 +4,13 @@
   "remoteUser": "node",
   "containerUser": "node",
   "updateRemoteUserUID": true,
-  "runArgs": ["--init"],
+  "runArgs": [
+    "--init",
+    "--security-opt=no-new-privileges:true"
+  ],
+  "containerEnv": {
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
@@ -19,7 +25,10 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
   }
 }
