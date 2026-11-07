@@ -20,6 +20,7 @@
     }
   },
   "postCreateCommand": "npm ci",
+  "postStartCommand": "bash -lc 'if [ ! -f .env ]; then cp .env.example .env; fi; echo \"Codespace ready\"'",
   "customizations": {
     "vscode": {
       "extensions": [
